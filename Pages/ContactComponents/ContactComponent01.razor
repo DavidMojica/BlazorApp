@@ -1,0 +1,36 @@
+﻿@using RazorApp.Models
+<p>
+	<b>Name: <span class="badge bg-success">@CurrentContact.FirstName @CurrentContact.LastName</span></b> 
+	<b>Email: <span class="badge bg-warning">@CurrentContact.Email</span></b> 
+	@if (displayInfo)
+	{
+		<span>Direccion email de @CurrentContact.FirstName @CurrentContact.LastName es @CurrentContact.Email </span>
+	}
+	<br />
+	<button @onclick="@ToggleInfo">
+		@message
+	</button>
+</p>
+@code {
+	[Parameter]
+	public Contact CurrentContact { get; set; }
+	private Dictionary<bool, string> defaultMessages = new Dictionary<bool, string>
+	{
+		{false, "Mostrar información"},
+		{true, "Ocultar información"}
+	};
+
+	private bool displayInfo = false;
+	private string message;
+
+	protected override void OnInitialized()
+	{
+		message = defaultMessages[displayInfo];
+	}
+
+	public void ToggleInfo()
+	{
+		displayInfo = !displayInfo;
+		message = defaultMessages[displayInfo];
+	}
+}

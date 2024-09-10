@@ -1,0 +1,43 @@
+# Archivos binarios y compilados
+bin/
+obj/
+out/
+
+# Dependencias de NuGet descargadas
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Archivos de configuración de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos generados automáticamente por el IDE
+.vscode/
+.idea/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# Archivos de entorno
+.env
+.env.*
+
+# Configuración de VS Code o Rider (si aplicas)
+.vscode/*
+.idea/*
+
+# Configuración de docker o contenedores
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+
+# Otros archivos de caché o configuración temporal
+*.tmp
+*.temp
+*.log
